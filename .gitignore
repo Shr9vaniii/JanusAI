@@ -21,6 +21,8 @@ model/
 htmlcov/
 __pycache__/
 Fine-tuning/generated/
+Fine-tuning/jsonl/
+Fine-tuning/chunks/
 dist/
 build/
 *.egg-info/
