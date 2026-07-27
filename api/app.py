@@ -27,6 +27,7 @@ from inference.cache_store import AnswerCache
 
 logger = logging.getLogger(__name__)
 STATIC_DIR = Path(__file__).resolve().parent / "static"
+WEB_DIST = ROOT / "web" / "dist"
 
 _engine: OnboardingRAGEngine | None = None
 _store: SessionStore | None = None
@@ -104,6 +105,11 @@ app.add_middleware(
 
 if STATIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+
+# Presentation UI (Vite build). Prefer this over the legacy static chat at /legacy.
+_web_assets = WEB_DIST / "assets"
+if _web_assets.exists():
+    app.mount("/assets", StaticFiles(directory=str(_web_assets)), name="web_assets")
 
 
 class CreateSessionResponse(BaseModel):
@@ -186,10 +192,39 @@ def _decompose_from_state(decompose: dict | None) -> dict[str, Any] | None:
 
 @app.get("/")
 def index():
+    spa = WEB_DIST / "index.html"
+    if spa.exists():
+        return FileResponse(spa)
+    # Fallback: legacy minimal chat UI
+    index_path = STATIC_DIR / "index.html"
+    if index_path.exists():
+        return FileResponse(index_path)
+    return JSONResponse(
+        {
+            "message": "UI missing. Build the presentation app with: cd web && npm install && npm run build",
+            "legacy": "/legacy",
+            "api": "POST /ask",
+        }
+    )
+
+
+@app.get("/legacy")
+def legacy_ui():
     index_path = STATIC_DIR / "index.html"
     if not index_path.exists():
-        return JSONResponse({"message": "UI missing; use POST /ask"})
+        raise HTTPException(status_code=404, detail="Legacy UI not found")
     return FileResponse(index_path)
+
+
+@app.get("/favicon.svg")
+@app.get("/icons.svg")
+def web_root_asset(request: Request):
+    """Serve Vite public assets from web/dist (not under /assets)."""
+    name = request.url.path.lstrip("/")
+    path = WEB_DIST / name
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail="Not found")
+    return FileResponse(path)
 
 
 @app.get("/health")
