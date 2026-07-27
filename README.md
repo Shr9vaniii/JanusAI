@@ -1,4 +1,4 @@
-# Onboarding RAG Engine
+# JanusAI
 
 
 Hybrid retrieval (dense + BM25 + RRF + cross-encoder + entity boost) feeds a QLoRA-tuned Llama 3.1 8B that answers with citations or abstains when the corpus does not support the claim.
@@ -7,7 +7,7 @@ Hybrid retrieval (dense + BM25 + RRF + cross-encoder + entity boost) feeds a QLo
 
 ```mermaid
 flowchart LR
-    Browser["Chat UI"] --> API["FastAPI /ask"]
+    Browser["Presentation UI (web/)"] --> API["FastAPI /ask"]
     API --> Session["SQLite sessions"]
     API --> Router["Rewrite then decompose"]
     Router --> Retrieval["Dense + BM25 + RRF + reranker"]
@@ -23,7 +23,7 @@ flowchart LR
 - Intent-aware hybrid retrieval over ChromaDB v3
 - Redis answer cache keyed by query + chunk IDs + cache/model/prompt version
 - Remote generation with retries/backoff; partial multi-query failure handling
-- FastAPI product API + minimal citation-aware chat UI
+- FastAPI product API + React presentation UI (`web/`) with scenario chips, citations, health strip, demo Trace
 - Evaluation dataset + runner (Recall@k / MRR / citations / abstention / latency / cache)
 - Unit tests + marked integration tests
 
@@ -52,14 +52,21 @@ Place or rebuild:
 python -m ingestion.bm25_ingestion
 ```
 
-### 4. Start API + UI
+### 4. Presentation UI + API
+“Presentation UI: JanusAI (web/).”
 ```bash
-# Requires INFERENCE_URL pointing at Colab/RunPod /generate
-uvicorn api.app:app --host 0.0.0.0 --port 8000
-```
-Open http://127.0.0.1:8000
+# Build the React app once (served by FastAPI at /)
+cd web && npm install && npm run build && cd ..
 
-### 5. CLI
+# Requires INFERENCE_URL pointing at Colab/RunPod /generate
+python -m uvicorn api.app:app --host 0.0.0.0 --port 8000
+```
+Open http://127.0.0.1:8000 — scenario chips, citations, health strip.
+Legacy minimal chat: `/legacy`.
+
+**Dev mode (hot reload):** run the API on `:8000`, then `cd web && npm run dev` → http://127.0.0.1:5173 (proxies `/ask`, `/sessions`, `/health`).
+
+### 5. CLI (same contract; later surface)
 ```bash
 python -m inference.rag_engine "What arguments does HTTPException take?" -v --backend remote
 python -m inference.rag_engine "..." --new-session --session-id <id>
@@ -109,13 +116,15 @@ See [`MODEL_CARD.md`](MODEL_CARD.md). Interview talking points: [`docs/INTERVIEW
 
 ## Repository layout
 ```
-api/                 FastAPI + static chat UI
-inference/           Orchestration, rewrite, decompose, cache, sessions
+web/                 Vite + React presentation UI (interview MVP)
+api/                 FastAPI; serves web/dist at / (legacy static at /legacy)
+inference/           Orchestration, rewrite, decompose, cache, sessions, LangGraph
 retrieval/           Hybrid retrieval
 ingestion/           BM25 index builder
 evaluation/          Benchmark dataset + runner
 tests/               pytest unit + integration
 deploy/colab|runpod  GPU serve scripts
+docs/                DEPLOY, DEMO_SCRIPT, INTERVIEW_BRIEF, FUTURE_WORK
 Fine-tuning/         Training / dataset research (not required to serve)
 ```
 

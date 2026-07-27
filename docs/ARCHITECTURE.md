@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    Browser["Small chat UI"] --> API["FastAPI /ask"]
+    Browser["JanusAI (web/)"] --> API["FastAPI /ask"]
     API --> Session["SQLite session memory"]
     API --> Router["Rewrite then decompose"]
     Router --> Retrieval["Dense + BM25 + RRF + reranker"]
