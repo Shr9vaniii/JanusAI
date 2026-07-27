@@ -1,0 +1,253 @@
+{
+  "dataset_version": "1.0.0",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "pass_rate": 1.0,
+    "avg_citation_correct": 1.0,
+    "avg_latency_ms": 21773.48
+  },
+  "results": [
+    {
+      "id": "direct_httpexception_args",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 27407.72,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 1201.59,
+          "decompose_ms": 630.45,
+          "retrieve_ms": 25483.14,
+          "generate_ms": 0.0,
+          "cache_ms": 37.08,
+          "total_ms": 27373.21
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_uploadfile",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 24742.89,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 1060.24,
+          "decompose_ms": 1161.18,
+          "retrieve_ms": 5780.95,
+          "generate_ms": 16654.27,
+          "cache_ms": 49.98,
+          "total_ms": 24723.58
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_depends",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 18034.14,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 875.56,
+          "decompose_ms": 686.87,
+          "retrieve_ms": 1540.92,
+          "generate_ms": 14865.61,
+          "cache_ms": 29.03,
+          "total_ms": 18006.51
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_redis",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 25387.92,
+        "cache_hit": false,
+        "abstained": true,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 781.36,
+          "decompose_ms": 799.94,
+          "retrieve_ms": 2670.01,
+          "generate_ms": 21068.96,
+          "cache_ms": 28.81,
+          "total_ms": 25365.19
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_kubernetes",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 24391.36,
+        "cache_hit": false,
+        "abstained": true,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 775.48,
+          "decompose_ms": 793.86,
+          "retrieve_ms": 2340.14,
+          "generate_ms": 20396.07,
+          "cache_ms": 46.9,
+          "total_ms": 24367.05
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_attributes",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 12338.55,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 892.11,
+          "decompose_ms": 761.95,
+          "retrieve_ms": 1233.64,
+          "generate_ms": 9390.28,
+          "cache_ms": 22.71,
+          "total_ms": 12313.98
+        },
+        "needs_rewrite": true
+      },
+      "error": ""
+    },
+    {
+      "id": "topic_switch",
+      "category": "topic_switch",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 17230.69,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 971.38,
+          "decompose_ms": 655.14,
+          "retrieve_ms": 1321.75,
+          "generate_ms": 14217.17,
+          "cache_ms": 25.07,
+          "total_ms": 17204.48
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_compound",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 5203.58,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 1296.01,
+          "decompose_ms": 795.45,
+          "retrieve_ms": 3055.93,
+          "generate_ms": 0.0,
+          "cache_ms": 28.91,
+          "total_ms": 5188.16
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_repeat",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 3254.06,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 946.82,
+          "decompose_ms": 726.25,
+          "retrieve_ms": 1813.55,
+          "generate_ms": 0.0,
+          "cache_ms": 15.72,
+          "total_ms": 3513.49
+        },
+        "needs_rewrite": false,
+        "second_cache_hit": true
+      },
+      "error": ""
+    },
+    {
+      "id": "background_tasks",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 59743.85,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 15,
+        "is_multi": true,
+        "dual_retrieval": false,
+        "timings": {
+          "rewrite_ms": 789.34,
+          "decompose_ms": 777.22,
+          "retrieve_ms": 5097.66,
+          "generate_ms": 52831.78,
+          "cache_ms": 110.86,
+          "total_ms": 59629.73
+        },
+        "needs_rewrite": false
+      },
+      "error": ""
+    }
+  ]
+}

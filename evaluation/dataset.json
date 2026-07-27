@@ -1,0 +1,97 @@
+{
+  "version": "1.0.0",
+  "description": "Interview-ready benchmark for Onboarding RAG (FastAPI corpus).",
+  "cases": [
+    {
+      "id": "direct_httpexception_args",
+      "category": "direct_api",
+      "question": "What arguments does HTTPException take?",
+      "expect_abstention": false,
+      "relevant_name_substrings": ["HTTPException"],
+      "must_cite": true,
+      "notes": "Grounded API reference question"
+    },
+    {
+      "id": "direct_uploadfile",
+      "category": "direct_api",
+      "question": "How do I upload a file with UploadFile in FastAPI?",
+      "expect_abstention": false,
+      "relevant_name_substrings": ["UploadFile", "File"],
+      "must_cite": true
+    },
+    {
+      "id": "direct_depends",
+      "category": "direct_api",
+      "question": "How does Depends work in FastAPI?",
+      "expect_abstention": false,
+      "relevant_name_substrings": ["Depends"],
+      "must_cite": true
+    },
+    {
+      "id": "abstain_redis",
+      "category": "grounded_abstention",
+      "question": "How do I configure Redis connection pooling in FastAPI?",
+      "expect_abstention": true,
+      "relevant_name_substrings": [],
+      "must_cite": false,
+      "notes": "Out of corpus — should abstain"
+    },
+    {
+      "id": "abstain_kubernetes",
+      "category": "grounded_abstention",
+      "question": "How do I deploy FastAPI on Kubernetes with Helm?",
+      "expect_abstention": true,
+      "relevant_name_substrings": [],
+      "must_cite": false
+    },
+    {
+      "id": "followup_attributes",
+      "category": "follow_up",
+      "session_seed": [
+        {"role": "user", "content": "What arguments does HTTPException take?"},
+        {"role": "assistant", "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."}
+      ],
+      "question": "and what are its attributes?",
+      "expect_rewrite": true,
+      "relevant_name_substrings": ["HTTPException"],
+      "expect_abstention": false
+    },
+    {
+      "id": "topic_switch",
+      "category": "topic_switch",
+      "session_seed": [
+        {"role": "user", "content": "What arguments does HTTPException take?"},
+        {"role": "assistant", "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."}
+      ],
+      "question": "How do I use UploadFile?",
+      "expect_rewrite": false,
+      "relevant_name_substrings": ["UploadFile"],
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_compound",
+      "category": "multi_query",
+      "question": "What args does HTTPException take and how do I use UploadFile?",
+      "expect_multi": true,
+      "relevant_name_substrings": ["HTTPException", "UploadFile"],
+      "expect_abstention": false
+    },
+    {
+      "id": "cache_repeat",
+      "category": "cache_repeatability",
+      "question": "What arguments does HTTPException take?",
+      "run_twice": true,
+      "expect_second_cache_hit": true,
+      "relevant_name_substrings": ["HTTPException"],
+      "expect_abstention": false
+    },
+    {
+      "id": "background_tasks",
+      "category": "direct_api",
+      "question": "How do I run background tasks after the response in FastAPI?",
+      "expect_abstention": false,
+      "relevant_name_substrings": ["BackgroundTasks", "background"],
+      "must_cite": true
+    }
+  ]
+}
