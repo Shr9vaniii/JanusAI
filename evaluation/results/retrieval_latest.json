@@ -1,0 +1,1063 @@
+{
+  "dataset_version": "1.2.0",
+  "summary": {
+    "total_scored": 69,
+    "total_including_skipped": 84,
+    "passed": 69,
+    "pass_rate": 1.0,
+    "avg_recall_at_5": 1.0,
+    "avg_precision_at_5": 0.933,
+    "avg_mrr": 0.966,
+    "avg_latency_ms": 5196.4,
+    "p50_latency_ms": 3675.99
+  },
+  "results": [
+    {
+      "id": "direct_httpexception_args",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 59850.82
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_uploadfile",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5726.94
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_depends",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2,
+        "mrr": 0.3333333333333333,
+        "num_hits": 5,
+        "latency_ms": 3462.01
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_background_tasks",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.6,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 7631.53
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_apirouter",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 6141.77
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_path_params",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4961.69
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_query_params",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5107.46
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_body",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4683.58
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_form",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5152.75
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_header_cookie",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3009.89
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_status_codes",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3803.11
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_response_model",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.6,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3161.56
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_websockets",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3841.69
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_cors",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4498.06
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_security_oauth2",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4041.92
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_request_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3013.99
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_lifespan",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3304.21
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_streaming",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3085.29
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_httpexception_404",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3784.98
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_file_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2423.6
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_json_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.6,
+        "mrr": 0.5,
+        "num_hits": 5,
+        "latency_ms": 3522.93
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_html_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2190.47
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_redirect",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 1928.39
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_staticfiles",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2606.85
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_testclient",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2817.67
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_httpbearer",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2831.13
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_apikey_header",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3675.99
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_plain_text",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2818.58
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_orjson",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2873.78
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_gzip",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 1946.21
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_dependency_injection",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2594.5
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_openapi",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3000.72
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_pydantic_validation",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.6,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3163.45
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_middleware",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2016.88
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_security_overview",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3543.41
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_response_models",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3284.64
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_async_endpoints",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 6908.16
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_path_operation",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3163.08
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_status_codes",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 0.5,
+        "num_hits": 5,
+        "latency_ms": 4085.28
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_file_uploads",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3086.44
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_cookies_headers",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 7454.96
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_router_include",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5252.92
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_httpexception_init",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4086.34
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_uploadfile",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 6041.58
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_depends",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 6459.29
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_query",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 17386.67
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_path",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 13245.35
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_form",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 10864.95
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_background_add",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5180.14
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_apirouter",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5444.27
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_streaming",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3148.07
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_oauth2",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3502.93
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_httpexception_upload",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3301.3
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_depends_background",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.8,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3324.84
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_path_query",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5641.28
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_form_file",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5889.64
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_header_cookie",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 6108.25
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_json_html",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 5782.14
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_cors_gzip",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4333.72
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_oauth_httpbearer",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3943.42
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_router_depends",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3419.65
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_stream_file",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 4133.43
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_request_response",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2884.38
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_testclient_httpexception",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3424.83
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_redis",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_kubernetes",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_mongodb",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_celery",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_graphql",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_kafka",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_terraform",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_prometheus",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_grpc",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_django_orm",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_spark",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_airflow",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_elasticsearch",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_flutter",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_neo4j",
+      "category": "grounded_abstention",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "abstention evaluated in e2e only"
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_httpexception",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3874.09
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_depends",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2,
+        "mrr": 0.3333333333333333,
+        "num_hits": 5,
+        "latency_ms": 2313.2
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_uploadfile",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2767.83
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_apirouter",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 2920.98
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_websocket",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "mrr": 1.0,
+        "num_hits": 5,
+        "latency_ms": 3676.08
+      },
+      "error": ""
+    }
+  ]
+}

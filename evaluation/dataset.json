@@ -1,97 +1,1183 @@
 {
-  "version": "1.0.0",
-  "description": "Interview-ready benchmark for Onboarding RAG (FastAPI corpus).",
+  "version": "1.2.0",
+  "description": "100-case balanced FastAPI RAG benchmark (direct, concept, signature, multi-query, abstention, follow-up, topic-switch, cache).",
   "cases": [
     {
       "id": "direct_httpexception_args",
       "category": "direct_api",
       "question": "What arguments does HTTPException take?",
+      "relevant_name_substrings": [
+        "HTTPException"
+      ],
       "expect_abstention": false,
-      "relevant_name_substrings": ["HTTPException"],
-      "must_cite": true,
-      "notes": "Grounded API reference question"
+      "must_cite": true
     },
     {
       "id": "direct_uploadfile",
       "category": "direct_api",
       "question": "How do I upload a file with UploadFile in FastAPI?",
+      "relevant_name_substrings": [
+        "UploadFile",
+        "File"
+      ],
       "expect_abstention": false,
-      "relevant_name_substrings": ["UploadFile", "File"],
       "must_cite": true
     },
     {
       "id": "direct_depends",
       "category": "direct_api",
       "question": "How does Depends work in FastAPI?",
+      "relevant_name_substrings": [
+        "Depends"
+      ],
       "expect_abstention": false,
-      "relevant_name_substrings": ["Depends"],
       "must_cite": true
+    },
+    {
+      "id": "direct_background_tasks",
+      "category": "direct_api",
+      "question": "How do I run background tasks after the response in FastAPI?",
+      "relevant_name_substrings": [
+        "BackgroundTasks"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_apirouter",
+      "category": "direct_api",
+      "question": "How do I use APIRouter to organize routes?",
+      "relevant_name_substrings": [
+        "APIRouter"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_path_params",
+      "category": "direct_api",
+      "question": "How do I declare path parameters with Path()?",
+      "relevant_name_substrings": [
+        "Path"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_query_params",
+      "category": "direct_api",
+      "question": "How do I declare query parameters with Query()?",
+      "relevant_name_substrings": [
+        "Query"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_body",
+      "category": "direct_api",
+      "question": "How do I receive a JSON body with Body() or a Pydantic model?",
+      "relevant_name_substrings": [
+        "Body",
+        "BaseModel"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_form",
+      "category": "direct_api",
+      "question": "How do I read form fields with Form()?",
+      "relevant_name_substrings": [
+        "Form"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_header_cookie",
+      "category": "direct_api",
+      "question": "How do I read request headers and cookies?",
+      "relevant_name_substrings": [
+        "Header",
+        "Cookie"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_status_codes",
+      "category": "direct_api",
+      "question": "How do I set HTTP status codes in FastAPI responses?",
+      "relevant_name_substrings": [
+        "status",
+        "status_code"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_response_model",
+      "category": "direct_api",
+      "question": "What is response_model used for in FastAPI?",
+      "relevant_name_substrings": [
+        "response_model"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_websockets",
+      "category": "direct_api",
+      "question": "How do I handle WebSockets in FastAPI?",
+      "relevant_name_substrings": [
+        "WebSocket"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_cors",
+      "category": "direct_api",
+      "question": "How do I enable CORSMiddleware in FastAPI?",
+      "relevant_name_substrings": [
+        "CORSMiddleware",
+        "CORS"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_security_oauth2",
+      "category": "direct_api",
+      "question": "How does OAuth2PasswordBearer work for authentication?",
+      "relevant_name_substrings": [
+        "OAuth2PasswordBearer",
+        "Security"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_request_response",
+      "category": "direct_api",
+      "question": "How do I access the Request and Response objects in a path operation?",
+      "relevant_name_substrings": [
+        "Request",
+        "Response"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_lifespan",
+      "category": "direct_api",
+      "question": "How do I run startup and shutdown logic with lifespan?",
+      "relevant_name_substrings": [
+        "lifespan",
+        "on_event"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_streaming",
+      "category": "direct_api",
+      "question": "How do I stream a response with StreamingResponse?",
+      "relevant_name_substrings": [
+        "StreamingResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_httpexception_404",
+      "category": "direct_api",
+      "question": "How do I raise HTTPException with status_code 404?",
+      "relevant_name_substrings": [
+        "HTTPException"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_file_response",
+      "category": "direct_api",
+      "question": "How do I return a file download with FileResponse?",
+      "relevant_name_substrings": [
+        "FileResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_json_response",
+      "category": "direct_api",
+      "question": "When should I use JSONResponse instead of returning a dict?",
+      "relevant_name_substrings": [
+        "JSONResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_html_response",
+      "category": "direct_api",
+      "question": "How do I return HTML with HTMLResponse?",
+      "relevant_name_substrings": [
+        "HTMLResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_redirect",
+      "category": "direct_api",
+      "question": "How do I redirect with RedirectResponse?",
+      "relevant_name_substrings": [
+        "RedirectResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_staticfiles",
+      "category": "direct_api",
+      "question": "How do I mount StaticFiles in FastAPI?",
+      "relevant_name_substrings": [
+        "StaticFiles"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_testclient",
+      "category": "direct_api",
+      "question": "How do I test endpoints with TestClient?",
+      "relevant_name_substrings": [
+        "TestClient"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_httpbearer",
+      "category": "direct_api",
+      "question": "How do I use HTTPBearer security scheme?",
+      "relevant_name_substrings": [
+        "HTTPBearer",
+        "Security"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_apikey_header",
+      "category": "direct_api",
+      "question": "How do I authenticate with an API key in a header?",
+      "relevant_name_substrings": [
+        "APIKeyHeader",
+        "Security"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_plain_text",
+      "category": "direct_api",
+      "question": "How do I return plain text with PlainTextResponse?",
+      "relevant_name_substrings": [
+        "PlainTextResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_orjson",
+      "category": "direct_api",
+      "question": "How do I use ORJSONResponse for faster JSON?",
+      "relevant_name_substrings": [
+        "ORJSONResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "direct_gzip",
+      "category": "direct_api",
+      "question": "How do I enable GZipMiddleware?",
+      "relevant_name_substrings": [
+        "GZipMiddleware"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_dependency_injection",
+      "category": "concept",
+      "question": "Explain FastAPI dependency injection at a high level.",
+      "relevant_name_substrings": [
+        "Depends",
+        "dependenc"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_openapi",
+      "category": "concept",
+      "question": "How does FastAPI generate OpenAPI documentation?",
+      "relevant_name_substrings": [
+        "OpenAPI",
+        "openapi",
+        "docs"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_pydantic_validation",
+      "category": "concept",
+      "question": "How does Pydantic validation work with FastAPI request bodies?",
+      "relevant_name_substrings": [
+        "BaseModel",
+        "Pydantic",
+        "validation"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_middleware",
+      "category": "concept",
+      "question": "What is middleware in FastAPI and when would I use it?",
+      "relevant_name_substrings": [
+        "Middleware",
+        "middleware"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_security_overview",
+      "category": "concept",
+      "question": "How does FastAPI security and authentication fit together?",
+      "relevant_name_substrings": [
+        "Security",
+        "OAuth2",
+        "security"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_response_models",
+      "category": "concept",
+      "question": "Why use response models instead of returning raw dicts?",
+      "relevant_name_substrings": [
+        "response_model",
+        "Response"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_async_endpoints",
+      "category": "concept",
+      "question": "Should FastAPI path operations be async or sync?",
+      "relevant_name_substrings": [
+        "async",
+        "def"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_path_operation",
+      "category": "concept",
+      "question": "What is a path operation function in FastAPI?",
+      "relevant_name_substrings": [
+        "path operation",
+        "FastAPI",
+        "@app"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_status_codes",
+      "category": "concept",
+      "question": "How should I choose status codes for success and errors?",
+      "relevant_name_substrings": [
+        "status",
+        "HTTPException"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_file_uploads",
+      "category": "concept",
+      "question": "What is the difference between File and UploadFile?",
+      "relevant_name_substrings": [
+        "File",
+        "UploadFile"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_cookies_headers",
+      "category": "concept",
+      "question": "When should I use Cookie vs Header parameters?",
+      "relevant_name_substrings": [
+        "Cookie",
+        "Header"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "concept_router_include",
+      "category": "concept",
+      "question": "How do I include routers into a main FastAPI app?",
+      "relevant_name_substrings": [
+        "APIRouter",
+        "include_router"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_httpexception_init",
+      "category": "signature",
+      "question": "What is the signature of HTTPException.__init__?",
+      "relevant_name_substrings": [
+        "HTTPException"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_uploadfile",
+      "category": "signature",
+      "question": "What attributes does UploadFile expose?",
+      "relevant_name_substrings": [
+        "UploadFile"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_depends",
+      "category": "signature",
+      "question": "What arguments does Depends accept?",
+      "relevant_name_substrings": [
+        "Depends"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_query",
+      "category": "signature",
+      "question": "What parameters can I pass to Query()?",
+      "relevant_name_substrings": [
+        "Query"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_path",
+      "category": "signature",
+      "question": "What parameters can I pass to Path()?",
+      "relevant_name_substrings": [
+        "Path"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_form",
+      "category": "signature",
+      "question": "What is the signature of Form()?",
+      "relevant_name_substrings": [
+        "Form"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_background_add",
+      "category": "signature",
+      "question": "What is the signature of BackgroundTasks.add_task?",
+      "relevant_name_substrings": [
+        "BackgroundTasks"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_apirouter",
+      "category": "signature",
+      "question": "What arguments does APIRouter.__init__ take?",
+      "relevant_name_substrings": [
+        "APIRouter"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_streaming",
+      "category": "signature",
+      "question": "What arguments does StreamingResponse take?",
+      "relevant_name_substrings": [
+        "StreamingResponse"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "signature_oauth2",
+      "category": "signature",
+      "question": "What is the signature of OAuth2PasswordBearer?",
+      "relevant_name_substrings": [
+        "OAuth2PasswordBearer"
+      ],
+      "expect_abstention": false,
+      "must_cite": true
+    },
+    {
+      "id": "multi_httpexception_upload",
+      "category": "multi_query",
+      "question": "What args does HTTPException take and how do I use UploadFile?",
+      "relevant_name_substrings": [
+        "HTTPException",
+        "UploadFile"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_depends_background",
+      "category": "multi_query",
+      "question": "How does Depends work and how do I schedule BackgroundTasks?",
+      "relevant_name_substrings": [
+        "Depends",
+        "BackgroundTasks"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_path_query",
+      "category": "multi_query",
+      "question": "How do Path parameters and Query parameters differ in FastAPI?",
+      "relevant_name_substrings": [
+        "Path",
+        "Query"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_form_file",
+      "category": "multi_query",
+      "question": "How do I combine Form fields with File uploads?",
+      "relevant_name_substrings": [
+        "Form",
+        "File",
+        "UploadFile"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_header_cookie",
+      "category": "multi_query",
+      "question": "How do Header and Cookie parameters work together?",
+      "relevant_name_substrings": [
+        "Header",
+        "Cookie"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_json_html",
+      "category": "multi_query",
+      "question": "When should I use JSONResponse versus HTMLResponse?",
+      "relevant_name_substrings": [
+        "JSONResponse",
+        "HTMLResponse"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_cors_gzip",
+      "category": "multi_query",
+      "question": "How do I enable CORSMiddleware and GZipMiddleware?",
+      "relevant_name_substrings": [
+        "CORSMiddleware",
+        "GZipMiddleware"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_oauth_httpbearer",
+      "category": "multi_query",
+      "question": "How do OAuth2PasswordBearer and HTTPBearer differ?",
+      "relevant_name_substrings": [
+        "OAuth2PasswordBearer",
+        "HTTPBearer"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_router_depends",
+      "category": "multi_query",
+      "question": "How do I attach dependencies to an APIRouter?",
+      "relevant_name_substrings": [
+        "APIRouter",
+        "Depends"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_stream_file",
+      "category": "multi_query",
+      "question": "When do I use StreamingResponse vs FileResponse?",
+      "relevant_name_substrings": [
+        "StreamingResponse",
+        "FileResponse"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_request_response",
+      "category": "multi_query",
+      "question": "How do Request and Response objects differ in FastAPI?",
+      "relevant_name_substrings": [
+        "Request",
+        "Response"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "multi_testclient_httpexception",
+      "category": "multi_query",
+      "question": "How do I test HTTPException responses with TestClient?",
+      "relevant_name_substrings": [
+        "TestClient",
+        "HTTPException"
+      ],
+      "expect_multi": true,
+      "expect_abstention": false
     },
     {
       "id": "abstain_redis",
       "category": "grounded_abstention",
       "question": "How do I configure Redis connection pooling in FastAPI?",
-      "expect_abstention": true,
       "relevant_name_substrings": [],
-      "must_cite": false,
-      "notes": "Out of corpus — should abstain"
+      "expect_abstention": true,
+      "must_cite": false
     },
     {
       "id": "abstain_kubernetes",
       "category": "grounded_abstention",
       "question": "How do I deploy FastAPI on Kubernetes with Helm?",
-      "expect_abstention": true,
       "relevant_name_substrings": [],
+      "expect_abstention": true,
       "must_cite": false
     },
     {
-      "id": "followup_attributes",
+      "id": "abstain_mongodb",
+      "category": "grounded_abstention",
+      "question": "How do I set up MongoDB replica sets with Motor in FastAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_celery",
+      "category": "grounded_abstention",
+      "question": "How do I configure Celery workers with RabbitMQ for FastAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_graphql",
+      "category": "grounded_abstention",
+      "question": "How do I build a GraphQL schema with Strawberry and FastAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_kafka",
+      "category": "grounded_abstention",
+      "question": "How do I consume Kafka topics inside a FastAPI lifespan?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_terraform",
+      "category": "grounded_abstention",
+      "question": "How do I provision FastAPI infrastructure with Terraform?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_prometheus",
+      "category": "grounded_abstention",
+      "question": "How do I export Prometheus metrics from FastAPI with custom histograms?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_grpc",
+      "category": "grounded_abstention",
+      "question": "How do I expose a gRPC service alongside FastAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_django_orm",
+      "category": "grounded_abstention",
+      "question": "How do I use Django ORM models inside FastAPI routes?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_spark",
+      "category": "grounded_abstention",
+      "question": "How do I run Spark jobs from a FastAPI endpoint?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_airflow",
+      "category": "grounded_abstention",
+      "question": "How do I trigger Airflow DAGs from FastAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_elasticsearch",
+      "category": "grounded_abstention",
+      "question": "How do I index FastAPI request logs into Elasticsearch clusters?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_flutter",
+      "category": "grounded_abstention",
+      "question": "How do I generate Flutter client SDKs from FastAPI OpenAPI?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "abstain_neo4j",
+      "category": "grounded_abstention",
+      "question": "How do I query Neo4j graph databases from FastAPI dependencies?",
+      "relevant_name_substrings": [],
+      "expect_abstention": true,
+      "must_cite": false
+    },
+    {
+      "id": "followup_httpexception_attrs",
       "category": "follow_up",
-      "session_seed": [
-        {"role": "user", "content": "What arguments does HTTPException take?"},
-        {"role": "assistant", "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."}
-      ],
       "question": "and what are its attributes?",
-      "expect_rewrite": true,
-      "relevant_name_substrings": ["HTTPException"],
-      "expect_abstention": false
-    },
-    {
-      "id": "topic_switch",
-      "category": "topic_switch",
-      "session_seed": [
-        {"role": "user", "content": "What arguments does HTTPException take?"},
-        {"role": "assistant", "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."}
+      "relevant_name_substrings": [
+        "HTTPException"
       ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "What arguments does HTTPException take?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_uploadfile_methods",
+      "category": "follow_up",
+      "question": "what methods can I call on it?",
+      "relevant_name_substrings": [
+        "UploadFile"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I upload a file with UploadFile in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use UploadFile with File() in your endpoint parameters."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_depends_nested",
+      "category": "follow_up",
+      "question": "can dependencies depend on other dependencies?",
+      "relevant_name_substrings": [
+        "Depends"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How does Depends work in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Depends declares dependencies injected into path operations."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_query_validation",
+      "category": "follow_up",
+      "question": "how do I set a minimum length?",
+      "relevant_name_substrings": [
+        "Query"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I declare query parameters with Query()?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use Query() to declare and validate query parameters."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_apirouter_prefix",
+      "category": "follow_up",
+      "question": "how do I set a prefix for all routes?",
+      "relevant_name_substrings": [
+        "APIRouter"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I use APIRouter to organize routes?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** APIRouter groups related path operations."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_websocket_disconnect",
+      "category": "follow_up",
+      "question": "what happens on disconnect?",
+      "relevant_name_substrings": [
+        "WebSocket",
+        "WebSocketDisconnect"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I handle WebSockets in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use WebSocket endpoints with accept and receive/send."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_background_args",
+      "category": "follow_up",
+      "question": "can I pass arguments to the task function?",
+      "relevant_name_substrings": [
+        "BackgroundTasks"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I run background tasks after the response in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Inject BackgroundTasks and call add_task."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_cors_origins",
+      "category": "follow_up",
+      "question": "how do I allow credentials?",
+      "relevant_name_substrings": [
+        "CORSMiddleware",
+        "CORS"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I enable CORSMiddleware in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Add CORSMiddleware with allow_origins."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_oauth_tokenurl",
+      "category": "follow_up",
+      "question": "what is tokenUrl used for?",
+      "relevant_name_substrings": [
+        "OAuth2PasswordBearer"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How does OAuth2PasswordBearer work for authentication?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** OAuth2PasswordBearer extracts a bearer token from the Authorization header."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "followup_streaming_media",
+      "category": "follow_up",
+      "question": "how do I set the media type?",
+      "relevant_name_substrings": [
+        "StreamingResponse"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I stream a response with StreamingResponse?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** StreamingResponse wraps an async iterator or generator."
+        }
+      ],
+      "expect_rewrite": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "topic_switch_ex_to_upload",
+      "category": "topic_switch",
       "question": "How do I use UploadFile?",
+      "relevant_name_substrings": [
+        "UploadFile"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "What arguments does HTTPException take?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** HTTPException takes status_code, detail, and headers."
+        }
+      ],
       "expect_rewrite": false,
-      "relevant_name_substrings": ["UploadFile"],
       "expect_abstention": false
     },
     {
-      "id": "multi_compound",
-      "category": "multi_query",
-      "question": "What args does HTTPException take and how do I use UploadFile?",
-      "expect_multi": true,
-      "relevant_name_substrings": ["HTTPException", "UploadFile"],
+      "id": "topic_switch_dep_to_ws",
+      "category": "topic_switch",
+      "question": "How do I handle WebSockets?",
+      "relevant_name_substrings": [
+        "WebSocket"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How does Depends work in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Depends injects dependencies into path operations."
+        }
+      ],
+      "expect_rewrite": false,
       "expect_abstention": false
     },
     {
-      "id": "cache_repeat",
+      "id": "topic_switch_query_to_cors",
+      "category": "topic_switch",
+      "question": "How do I enable CORSMiddleware?",
+      "relevant_name_substrings": [
+        "CORSMiddleware"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I declare query parameters with Query()?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use Query() for query string parameters."
+        }
+      ],
+      "expect_rewrite": false,
+      "expect_abstention": false
+    },
+    {
+      "id": "topic_switch_form_to_oauth",
+      "category": "topic_switch",
+      "question": "How does OAuth2PasswordBearer work?",
+      "relevant_name_substrings": [
+        "OAuth2PasswordBearer"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I read form fields with Form()?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use Form() for form-encoded fields."
+        }
+      ],
+      "expect_rewrite": false,
+      "expect_abstention": false
+    },
+    {
+      "id": "topic_switch_bg_to_static",
+      "category": "topic_switch",
+      "question": "How do I mount StaticFiles?",
+      "relevant_name_substrings": [
+        "StaticFiles"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I run background tasks after the response in FastAPI?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use BackgroundTasks.add_task."
+        }
+      ],
+      "expect_rewrite": false,
+      "expect_abstention": false
+    },
+    {
+      "id": "topic_switch_router_to_test",
+      "category": "topic_switch",
+      "question": "How do I test endpoints with TestClient?",
+      "relevant_name_substrings": [
+        "TestClient"
+      ],
+      "session_seed": [
+        {
+          "role": "user",
+          "content": "How do I use APIRouter to organize routes?"
+        },
+        {
+          "role": "assistant",
+          "content": "**Direct Answer:** Use APIRouter and include_router."
+        }
+      ],
+      "expect_rewrite": false,
+      "expect_abstention": false
+    },
+    {
+      "id": "cache_httpexception",
       "category": "cache_repeatability",
       "question": "What arguments does HTTPException take?",
+      "relevant_name_substrings": [
+        "HTTPException"
+      ],
       "run_twice": true,
       "expect_second_cache_hit": true,
-      "relevant_name_substrings": ["HTTPException"],
       "expect_abstention": false
     },
     {
-      "id": "background_tasks",
-      "category": "direct_api",
-      "question": "How do I run background tasks after the response in FastAPI?",
-      "expect_abstention": false,
-      "relevant_name_substrings": ["BackgroundTasks", "background"],
-      "must_cite": true
+      "id": "cache_depends",
+      "category": "cache_repeatability",
+      "question": "How does Depends work in FastAPI?",
+      "relevant_name_substrings": [
+        "Depends"
+      ],
+      "run_twice": true,
+      "expect_second_cache_hit": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "cache_uploadfile",
+      "category": "cache_repeatability",
+      "question": "How do I upload a file with UploadFile in FastAPI?",
+      "relevant_name_substrings": [
+        "UploadFile",
+        "File"
+      ],
+      "run_twice": true,
+      "expect_second_cache_hit": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "cache_apirouter",
+      "category": "cache_repeatability",
+      "question": "How do I use APIRouter to organize routes?",
+      "relevant_name_substrings": [
+        "APIRouter"
+      ],
+      "run_twice": true,
+      "expect_second_cache_hit": true,
+      "expect_abstention": false
+    },
+    {
+      "id": "cache_websocket",
+      "category": "cache_repeatability",
+      "question": "How do I handle WebSockets in FastAPI?",
+      "relevant_name_substrings": [
+        "WebSocket"
+      ],
+      "run_twice": true,
+      "expect_second_cache_hit": true,
+      "expect_abstention": false
     }
   ]
 }

@@ -1,11 +1,13 @@
 {
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.2.0",
   "summary": {
-    "total": 10,
-    "passed": 10,
-    "pass_rate": 1.0,
+    "total_scored": 84,
+    "total_including_skipped": 100,
+    "passed": 57,
+    "pass_rate": 0.679,
     "avg_citation_correct": 1.0,
-    "avg_latency_ms": 21773.48
+    "avg_latency_ms": 29673.0,
+    "p50_latency_ms": 19449.22
   },
   "results": [
     {
@@ -13,22 +15,12 @@
       "category": "direct_api",
       "ok": true,
       "metrics": {
-        "latency_ms": 27407.72,
+        "latency_ms": 109186.3,
         "cache_hit": true,
         "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 5,
-        "is_multi": false,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 1201.59,
-          "decompose_ms": 630.45,
-          "retrieve_ms": 25483.14,
-          "generate_ms": 0.0,
-          "cache_ms": 37.08,
-          "total_ms": 27373.21
-        },
-        "needs_rewrite": false
+        "is_multi": false
       },
       "error": ""
     },
@@ -37,22 +29,12 @@
       "category": "direct_api",
       "ok": true,
       "metrics": {
-        "latency_ms": 24742.89,
+        "latency_ms": 29545.44,
         "cache_hit": true,
         "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 10,
-        "is_multi": true,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 1060.24,
-          "decompose_ms": 1161.18,
-          "retrieve_ms": 5780.95,
-          "generate_ms": 16654.27,
-          "cache_ms": 49.98,
-          "total_ms": 24723.58
-        },
-        "needs_rewrite": false
+        "is_multi": true
       },
       "error": ""
     },
@@ -61,191 +43,1227 @@
       "category": "direct_api",
       "ok": true,
       "metrics": {
-        "latency_ms": 18034.14,
+        "latency_ms": 29526.65,
         "cache_hit": false,
         "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 5,
-        "is_multi": false,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 875.56,
-          "decompose_ms": 686.87,
-          "retrieve_ms": 1540.92,
-          "generate_ms": 14865.61,
-          "cache_ms": 29.03,
-          "total_ms": 18006.51
-        },
-        "needs_rewrite": false
+        "is_multi": false
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_background_tasks",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 112317.44,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 15,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_apirouter",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 99952.39,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_path_params",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 86862.42,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_query_params",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 54992.39,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_body",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 60088.12,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_form",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 50791.39,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_header_cookie",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 47436.19,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_status_codes",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 76121.46,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_response_model",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 23699.63,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 5,
+        "is_multi": false
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_websockets",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 45107.47,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_cors",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 48409.12,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_security_oauth2",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 71257.05,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_request_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 52429.24,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_lifespan",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 8638.41,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_streaming",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 8820.76,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_httpexception_404",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 20285.84,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_file_response",
+      "category": "direct_api",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "direct_json_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 24383.81,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_html_response",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 18570.67,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_redirect",
+      "category": "direct_api",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "direct_staticfiles",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 22417.06,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_testclient",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 27343.04,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_httpbearer",
+      "category": "direct_api",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "direct_apikey_header",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 14280.31,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_plain_text",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 16752.44,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_orjson",
+      "category": "direct_api",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 10843.89,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "direct_gzip",
+      "category": "direct_api",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "concept_dependency_injection",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 15484.68,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_openapi",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 11665.6,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_pydantic_validation",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 10482.03,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_middleware",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 16810.83,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_security_overview",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 20948.71,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_response_models",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 51975.84,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_async_endpoints",
+      "category": "concept",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "concept_path_operation",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 13466.92,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_status_codes",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 14457.77,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_file_uploads",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 16764.99,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 15,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_cookies_headers",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 17473.66,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "concept_router_include",
+      "category": "concept",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 13178.43,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_httpexception_init",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_uploadfile",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_depends",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_query",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 43413.85,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_path",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_form",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_background_add",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 19631.96,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_apirouter",
+      "category": "signature",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 16227.53,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "signature_streaming",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "signature_oauth2",
+      "category": "signature",
+      "ok": false,
+      "metrics": {},
+      "error": "HTTP Error 502: Bad Gateway"
+    },
+    {
+      "id": "multi_httpexception_upload",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 15480.57,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_depends_background",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 17660.97,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_path_query",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 19224.9,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_form_file",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 72375.08,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_header_cookie",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 45126.64,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 15,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_json_html",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 14436.83,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_cors_gzip",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 26312.67,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_oauth_httpbearer",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 59330.66,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_router_depends",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 21479.64,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_stream_file",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 10893.14,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_request_response",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 12488.78,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "multi_testclient_httpexception",
+      "category": "multi_query",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 14157.89,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
       },
       "error": ""
     },
     {
       "id": "abstain_redis",
       "category": "grounded_abstention",
-      "ok": true,
+      "ok": false,
       "metrics": {
-        "latency_ms": 25387.92,
+        "latency_ms": 10027.08,
         "cache_hit": false,
-        "abstained": true,
+        "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 10,
-        "is_multi": true,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 781.36,
-          "decompose_ms": 799.94,
-          "retrieve_ms": 2670.01,
-          "generate_ms": 21068.96,
-          "cache_ms": 28.81,
-          "total_ms": 25365.19
-        },
-        "needs_rewrite": false
+        "is_multi": true
       },
       "error": ""
     },
     {
       "id": "abstain_kubernetes",
       "category": "grounded_abstention",
-      "ok": true,
+      "ok": false,
       "metrics": {
-        "latency_ms": 24391.36,
+        "latency_ms": 30277.24,
         "cache_hit": false,
-        "abstained": true,
+        "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 10,
-        "is_multi": true,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 775.48,
-          "decompose_ms": 793.86,
-          "retrieve_ms": 2340.14,
-          "generate_ms": 20396.07,
-          "cache_ms": 46.9,
-          "total_ms": 24367.05
-        },
-        "needs_rewrite": false
+        "is_multi": true
       },
       "error": ""
     },
     {
-      "id": "followup_attributes",
+      "id": "abstain_mongodb",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 32337.13,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_celery",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 11598.37,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_graphql",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 11765.72,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_kafka",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 12658.96,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_terraform",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 15366.64,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_prometheus",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 14645.74,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_grpc",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 15442.6,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_django_orm",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 52134.42,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_spark",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 22518.54,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 15,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_airflow",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 14779.64,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_elasticsearch",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 19869.74,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_flutter",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 15616.23,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "abstain_neo4j",
+      "category": "grounded_abstention",
+      "ok": false,
+      "metrics": {
+        "latency_ms": 19449.22,
+        "cache_hit": false,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_httpexception_attrs",
       "category": "follow_up",
       "ok": true,
       "metrics": {
-        "latency_ms": 12338.55,
-        "cache_hit": false,
-        "abstained": false,
-        "citation_correct": 1.0,
-        "num_chunks": 5,
-        "is_multi": false,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 892.11,
-          "decompose_ms": 761.95,
-          "retrieve_ms": 1233.64,
-          "generate_ms": 9390.28,
-          "cache_ms": 22.71,
-          "total_ms": 12313.98
-        },
-        "needs_rewrite": true
+        "skipped": true,
+        "reason": "session cases use --local"
       },
       "error": ""
     },
     {
-      "id": "topic_switch",
+      "id": "followup_uploadfile_methods",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_depends_nested",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_query_validation",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_apirouter_prefix",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_websocket_disconnect",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_background_args",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_cors_origins",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_oauth_tokenurl",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "followup_streaming_media",
+      "category": "follow_up",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "topic_switch_ex_to_upload",
       "category": "topic_switch",
       "ok": true,
       "metrics": {
-        "latency_ms": 17230.69,
-        "cache_hit": false,
-        "abstained": false,
-        "citation_correct": 1.0,
-        "num_chunks": 5,
-        "is_multi": false,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 971.38,
-          "decompose_ms": 655.14,
-          "retrieve_ms": 1321.75,
-          "generate_ms": 14217.17,
-          "cache_ms": 25.07,
-          "total_ms": 17204.48
-        },
-        "needs_rewrite": false
+        "skipped": true,
+        "reason": "session cases use --local"
       },
       "error": ""
     },
     {
-      "id": "multi_compound",
-      "category": "multi_query",
+      "id": "topic_switch_dep_to_ws",
+      "category": "topic_switch",
       "ok": true,
       "metrics": {
-        "latency_ms": 5203.58,
-        "cache_hit": true,
-        "abstained": false,
-        "citation_correct": 1.0,
-        "num_chunks": 10,
-        "is_multi": true,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 1296.01,
-          "decompose_ms": 795.45,
-          "retrieve_ms": 3055.93,
-          "generate_ms": 0.0,
-          "cache_ms": 28.91,
-          "total_ms": 5188.16
-        },
-        "needs_rewrite": false
+        "skipped": true,
+        "reason": "session cases use --local"
       },
       "error": ""
     },
     {
-      "id": "cache_repeat",
+      "id": "topic_switch_query_to_cors",
+      "category": "topic_switch",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "topic_switch_form_to_oauth",
+      "category": "topic_switch",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "topic_switch_bg_to_static",
+      "category": "topic_switch",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "topic_switch_router_to_test",
+      "category": "topic_switch",
+      "ok": true,
+      "metrics": {
+        "skipped": true,
+        "reason": "session cases use --local"
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_httpexception",
       "category": "cache_repeatability",
       "ok": true,
       "metrics": {
-        "latency_ms": 3254.06,
+        "latency_ms": 10112.69,
         "cache_hit": true,
         "abstained": false,
         "citation_correct": 1.0,
         "num_chunks": 5,
         "is_multi": false,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 946.82,
-          "decompose_ms": 726.25,
-          "retrieve_ms": 1813.55,
-          "generate_ms": 0.0,
-          "cache_ms": 15.72,
-          "total_ms": 3513.49
-        },
-        "needs_rewrite": false,
         "second_cache_hit": true
       },
       "error": ""
     },
     {
-      "id": "background_tasks",
-      "category": "direct_api",
+      "id": "cache_depends",
+      "category": "cache_repeatability",
       "ok": true,
       "metrics": {
-        "latency_ms": 59743.85,
-        "cache_hit": false,
+        "latency_ms": 5771.38,
+        "cache_hit": true,
         "abstained": false,
         "citation_correct": 1.0,
-        "num_chunks": 15,
+        "num_chunks": 5,
+        "is_multi": false,
+        "second_cache_hit": true
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_uploadfile",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 10403.65,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
         "is_multi": true,
-        "dual_retrieval": false,
-        "timings": {
-          "rewrite_ms": 789.34,
-          "decompose_ms": 777.22,
-          "retrieve_ms": 5097.66,
-          "generate_ms": 52831.78,
-          "cache_ms": 110.86,
-          "total_ms": 59629.73
-        },
-        "needs_rewrite": false
+        "second_cache_hit": true
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_apirouter",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 19761.67,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "second_cache_hit": true
+      },
+      "error": ""
+    },
+    {
+      "id": "cache_websocket",
+      "category": "cache_repeatability",
+      "ok": true,
+      "metrics": {
+        "latency_ms": 10909.93,
+        "cache_hit": true,
+        "abstained": false,
+        "citation_correct": 1.0,
+        "num_chunks": 10,
+        "is_multi": true,
+        "second_cache_hit": true
       },
       "error": ""
     }

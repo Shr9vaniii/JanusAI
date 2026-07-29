@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from dataclasses import asdict, dataclass, field
@@ -37,9 +38,28 @@ class CaseResult:
     error: str = ""
 
 
+_ABSTAIN_PATTERNS = re.compile(
+    r"i (don.t|do not|cannot|can.t) (have|find|provide|answer|give)|"
+    r"not enough information|"
+    r"(outside|beyond|not (in|within|part of)) (my|the) (corpus|context|scope|knowledge|documentation)|"
+    r"(cannot|can.t|not able to) (answer|help|assist) (with )?this|"
+    r"(no|insufficient) (information|context|data) (in|from|within) (the )?context|"
+    r"the (provided )?context (does not|doesn.t) (contain|cover|address|include)|"
+    r"(this topic|this question|that topic) (is|falls) (outside|beyond|not covered)",
+    re.IGNORECASE,
+)
+
+
 def _is_abstention(answer: str) -> bool:
-    lower = (answer or "").lower()
-    return "i don't have enough information" in lower or "not enough information" in lower
+    """Return True if the LLM answer is a grounded refusal / abstention."""
+    text = (answer or "").strip()
+    if not text:
+        return False
+    # Multi-arm answers: ALL sub-arms must abstain for the whole response to count
+    parts = re.split(r"### Question \d+:", text)
+    if len(parts) > 1:
+        return all(_ABSTAIN_PATTERNS.search(p) for p in parts if p.strip())
+    return bool(_ABSTAIN_PATTERNS.search(text))
 
 
 def _name_hit(hit: dict, needles: list[str]) -> bool:
@@ -52,16 +72,27 @@ def _name_hit(hit: dict, needles: list[str]) -> bool:
     return any(n.lower() in blob for n in needles)
 
 
+def precision_at_k(hits: list[dict], needles: list[str], k: int = 5) -> float:
+    """Fraction of top-k hits that match any gold needle (0 if no needles)."""
+    if not needles:
+        return 0.0
+    top = hits[:k]
+    if not top:
+        return 0.0
+    relevant = sum(1 for h in top if _name_hit(h, needles))
+    return relevant / len(top)
+
+
 def recall_at_k(hits: list[dict], needles: list[str], k: int = 5) -> float:
     if not needles:
-        return 1.0
+        return 0.0
     top = hits[:k]
     return 1.0 if any(_name_hit(h, needles) for h in top) else 0.0
 
 
 def mrr(hits: list[dict], needles: list[str]) -> float:
     if not needles:
-        return 1.0
+        return 0.0
     for i, h in enumerate(hits, 1):
         if _name_hit(h, needles):
             return 1.0 / i
@@ -91,6 +122,17 @@ def eval_retrieval_only(cases: list[dict]) -> list[CaseResult]:
     for case in cases:
         if case.get("session_seed"):
             continue
+        # Abstention cases are generation-level — skip in retrieval-only scoring
+        if case.get("expect_abstention") is True:
+            results.append(
+                CaseResult(
+                    id=case["id"],
+                    category=case["category"],
+                    ok=True,
+                    metrics={"skipped": True, "reason": "abstention evaluated in e2e only"},
+                )
+            )
+            continue
         q = case["question"]
         needles = case.get("relevant_name_substrings") or []
         t0 = time.perf_counter()
@@ -98,9 +140,10 @@ def eval_retrieval_only(cases: list[dict]) -> list[CaseResult]:
             _, hits = retrieve_for_query(q, n_final=5, verbose=False)
             latency = (time.perf_counter() - t0) * 1000
             r_at_5 = recall_at_k(hits, needles, 5)
+            p_at_5 = precision_at_k(hits, needles, 5)
             mrr_score = mrr(hits, needles)
             ok = True
-            if needles and case.get("expect_abstention") is not True:
+            if needles:
                 ok = r_at_5 >= 1.0
             results.append(
                 CaseResult(
@@ -109,6 +152,7 @@ def eval_retrieval_only(cases: list[dict]) -> list[CaseResult]:
                     ok=ok,
                     metrics={
                         "recall_at_5": r_at_5,
+                        "precision_at_5": round(p_at_5, 3),
                         "mrr": mrr_score,
                         "num_hits": len(hits),
                         "latency_ms": round(latency, 2),
@@ -294,25 +338,31 @@ def eval_local_e2e(cases: list[dict]) -> list[CaseResult]:
 
 
 def summarize(results: list[CaseResult]) -> dict[str, Any]:
-    total = len(results)
-    passed = sum(1 for r in results if r.ok)
-    recalls = [r.metrics.get("recall_at_5") for r in results if "recall_at_5" in r.metrics]
-    mrrs = [r.metrics.get("mrr") for r in results if "mrr" in r.metrics]
-    cites = [r.metrics.get("citation_correct") for r in results if "citation_correct" in r.metrics]
-    lats = [r.metrics.get("latency_ms") for r in results if "latency_ms" in r.metrics]
+    scored = [r for r in results if not r.metrics.get("skipped")]
+    total = len(scored)
+    passed = sum(1 for r in scored if r.ok)
+    recalls = [r.metrics.get("recall_at_5") for r in scored if "recall_at_5" in r.metrics]
+    precs = [r.metrics.get("precision_at_5") for r in scored if "precision_at_5" in r.metrics]
+    mrrs = [r.metrics.get("mrr") for r in scored if "mrr" in r.metrics]
+    cites = [r.metrics.get("citation_correct") for r in scored if "citation_correct" in r.metrics]
+    lats = [r.metrics.get("latency_ms") for r in scored if "latency_ms" in r.metrics]
     summary: dict[str, Any] = {
-        "total": total,
+        "total_scored": total,
+        "total_including_skipped": len(results),
         "passed": passed,
         "pass_rate": round(passed / total, 3) if total else 0.0,
     }
     if recalls:
         summary["avg_recall_at_5"] = round(sum(recalls) / len(recalls), 3)
+    if precs:
+        summary["avg_precision_at_5"] = round(sum(precs) / len(precs), 3)
     if mrrs:
         summary["avg_mrr"] = round(sum(mrrs) / len(mrrs), 3)
     if cites:
         summary["avg_citation_correct"] = round(sum(cites) / len(cites), 3)
     if lats:
         summary["avg_latency_ms"] = round(sum(lats) / len(lats), 2)
+        summary["p50_latency_ms"] = round(sorted(lats)[len(lats) // 2], 2)
     return summary
 
 
